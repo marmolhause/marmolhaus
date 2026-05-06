@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,7 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Poppins',sans-serif;
-background:#0f0f0f;
+background:#0d0d0d;
 color:white;
 overflow-x:hidden;
 }
@@ -30,13 +31,13 @@ header{
 position:fixed;
 top:0;
 width:100%;
-z-index:1000;
-background:rgba(0,0,0,.75);
-backdrop-filter:blur(10px);
-padding:18px 8%;
+padding:20px 8%;
 display:flex;
 justify-content:center;
 gap:40px;
+background:rgba(0,0,0,.70);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 header a{
@@ -56,12 +57,11 @@ color:#d4af37;
 height:100vh;
 
 background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),
-url('imágenes/portada.jpg');
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.70)),
+url('img/portada.jpg');
 
 background-size:cover;
 background-position:center;
-
 display:flex;
 justify-content:center;
 align-items:center;
@@ -81,28 +81,29 @@ text-shadow:0 5px 25px rgba(0,0,0,.5);
 }
 
 .hero p{
-font-size:1.2rem;
 max-width:700px;
 margin:auto;
-line-height:1.7;
+font-size:1.15rem;
+line-height:1.8;
 margin-bottom:35px;
+color:#e0e0e0;
 }
 
 .boton{
 display:inline-block;
-padding:14px 35px;
+padding:14px 34px;
 background:#d4af37;
 color:black;
 font-weight:600;
+border-radius:10px;
 text-decoration:none;
-border-radius:8px;
-transition:.3s;
+transition:.35s;
 }
 
 .boton:hover{
-transform:translateY(-4px);
-background:#f3cd54;
-box-shadow:0 10px 25px rgba(212,175,55,.4);
+transform:translateY(-5px);
+background:#f0cb56;
+box-shadow:0 12px 25px rgba(212,175,55,.35);
 }
 
 /* SECCIONES */
@@ -112,14 +113,28 @@ padding:110px 8%;
 }
 
 .titulo-seccion{
+text-align:center;
 font-size:3rem;
 font-family:'Playfair Display',serif;
 margin-bottom:60px;
-text-align:center;
-color:#f5f5f5;
 }
 
-/* GRID */
+/* SOBRE NOSOTROS */
+
+.sobre{
+background:#141414;
+text-align:center;
+}
+
+.sobre p{
+max-width:900px;
+margin:auto;
+line-height:2;
+font-size:1.05rem;
+color:#d0d0d0;
+}
+
+/* GRID PRODUCTOS */
 
 .grid-productos{
 display:grid;
@@ -127,7 +142,7 @@ grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:35px;
 }
 
-/* TARJETAS */
+/* PRODUCTOS */
 
 .producto{
 background:#171717;
@@ -135,7 +150,6 @@ border-radius:22px;
 overflow:hidden;
 transition:.5s;
 border:1px solid rgba(255,255,255,.06);
-position:relative;
 }
 
 .producto:hover{
@@ -177,30 +191,11 @@ font-weight:600;
 margin-bottom:25px;
 }
 
-/* SOBRE NOSOTROS */
-
-.sobre{
-background:#141414;
-text-align:center;
-}
-
-.sobre p{
-max-width:900px;
-margin:auto;
-line-height:2;
-font-size:1.1rem;
-color:#d0d0d0;
-}
-
 /* CONTACTO */
 
 .contacto{
 text-align:center;
 background:#101010;
-}
-
-.contacto h2{
-margin-bottom:25px;
 }
 
 .contacto p{
@@ -211,9 +206,9 @@ color:#d0d0d0;
 /* FOOTER */
 
 footer{
+background:black;
 padding:35px;
 text-align:center;
-background:black;
 color:#777;
 font-size:.9rem;
 }
@@ -258,7 +253,10 @@ font-size:.9rem;
 
 <body>
 
+<!-- NAVBAR -->
+
 <header>
+
 <a href="#inicio">Inicio</a>
 <a href="#nosotros">Quiénes somos</a>
 <a href="#mesas">Mesas</a>
@@ -266,6 +264,7 @@ font-size:.9rem;
 <a href="#relojes">Relojes</a>
 <a href="#cuadros">Cuadros</a>
 <a href="#contacto">Contacto</a>
+
 </header>
 
 <!-- HERO -->
@@ -286,6 +285,7 @@ Ver catálogo
 </a>
 
 </div>
+
 </section>
 
 <!-- NOSOTROS -->
@@ -316,7 +316,7 @@ Mesas
 
 <div class="producto">
 
-<img src="imágenes/MES-001.jpg" alt="Mesa ónix iluminada">
+<img src="img/MES-001.jpg" alt="Mesa ónix iluminada">
 
 <div class="producto-contenido">
 
@@ -341,7 +341,7 @@ Cotizar
 
 <div class="producto">
 
-<img src="imágenes/MES-002.jpg" alt="Mesa comedor ónix">
+<img src="img/MES-002.jpg" alt="Mesa comedor ónix">
 
 <div class="producto-contenido">
 
@@ -365,6 +365,7 @@ Cotizar
 </div>
 
 </div>
+
 </section>
 
 <!-- LAVABOS -->
@@ -379,7 +380,7 @@ Lavabos
 
 <div class="producto">
 
-<img src="imágenes/LAV-001.jpg">
+<img src="img/LAV-001.jpg">
 
 <div class="producto-contenido">
 
@@ -404,7 +405,7 @@ Cotizar
 
 <div class="producto">
 
-<img src="imágenes/LAV-002.jpg">
+<img src="img/LAV-002.jpg">
 
 <div class="producto-contenido">
 
@@ -429,7 +430,7 @@ Cotizar
 
 <div class="producto">
 
-<img src="imágenes/LAV-003.jpg">
+<img src="img/LAV-003.jpg">
 
 <div class="producto-contenido">
 
@@ -454,7 +455,7 @@ Cotizar
 
 <div class="producto">
 
-<img src="imágenes/LAV-004.jpg">
+<img src="img/LAV-004.jpg">
 
 <div class="producto-contenido">
 
@@ -478,6 +479,7 @@ Cotizar
 </div>
 
 </div>
+
 </section>
 
 <!-- RELOJES -->
@@ -492,7 +494,7 @@ Relojes
 
 <div class="producto">
 
-<img src="imágenes/REL-001.jpg">
+<img src="img/REL-001.jpg">
 
 <div class="producto-contenido">
 
@@ -517,7 +519,7 @@ Cotizar
 
 <div class="producto">
 
-<img src="imágenes/REL-002.jpg">
+<img src="img/REL-002.jpg">
 
 <div class="producto-contenido">
 
@@ -541,6 +543,7 @@ Cotizar
 </div>
 
 </div>
+
 </section>
 
 <!-- CUADROS -->
@@ -555,7 +558,7 @@ Cuadros decorativos
 
 <div class="producto">
 
-<img src="imágenes/CUA-001.jpg">
+<img src="img/CUA-001.jpg">
 
 <div class="producto-contenido">
 
@@ -579,6 +582,7 @@ Cotizar
 </div>
 
 </div>
+
 </section>
 
 <!-- CONTACTO -->
