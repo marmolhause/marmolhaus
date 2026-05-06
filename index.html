@@ -69,14 +69,9 @@ PORTADA
     ),
     url("img/portada.jpg");
 
-    /* CAMBIO IMPORTANTE */
-    background-size:contain;
-
-    background-position:center center;
+    background-size:cover;
+    background-position:center;
     background-repeat:no-repeat;
-
-    /* FONDO NEGRO PARA LOS LADOS */
-    background-color:#000;
 
     display:flex;
     justify-content:center;
@@ -88,16 +83,6 @@ PORTADA
 
 .hero-contenido{
     max-width:900px;
-
-    background:rgba(0,0,0,0.28);
-
-    backdrop-filter:blur(6px);
-
-    padding:35px 45px;
-
-    border-radius:24px;
-
-    border:1px solid rgba(212,175,55,0.22);
 }
 
 .hero h1{
@@ -158,8 +143,7 @@ TARJETAS
 
     padding:18px;
 
-    /* BORDE DORADO MÁS VISIBLE */
-    border:2px solid rgba(212,175,55,0.65);
+    border:1px solid rgba(212,175,55,0.10);
 
     transition:0.35s ease;
 
@@ -171,8 +155,7 @@ TARJETAS
     transform:translateY(-4px);
 
     box-shadow:
-    0 18px 40px rgba(0,0,0,0.55),
-    0 0 18px rgba(212,175,55,0.18);
+    0 18px 40px rgba(0,0,0,0.55);
 }
 
 /* =========================================
@@ -183,16 +166,11 @@ IMÁGENES PREMIUM
     width:100%;
     height:260px;
 
-    /* CAMBIO IMPORTANTE */
-    object-fit:contain;
-
-    background:#0a0a0a;
+    object-fit:cover;
 
     border-radius:14px;
 
-    border:2px solid rgba(212,175,55,0.95);
-
-    padding:8px;
+    border:2px solid rgba(212,175,55,0.85);
 
     box-shadow:
     0 0 8px rgba(212,175,55,0.25),
@@ -227,22 +205,7 @@ TEXTOS PRODUCTOS
     color:#d8d8d8;
     line-height:1.7;
     font-size:15px;
-
-    /* EVITA QUE SE CORTE EL TEXTO */
-    overflow:visible;
-
-    display:block;
-
-    height:auto;
-
-    max-height:none;
-
-    -webkit-line-clamp:unset;
 }
-
-/* =========================================
-CÓDIGOS
-========================================= */
 
 .codigo{
     margin-top:18px;
@@ -276,7 +239,53 @@ BOTÓN
 
 .btn-cotizar:hover{
     background:#d4af37;
-    color:#000;
+    color:#fff;
+}
+
+/* =========================================
+QUIÉNES SOMOS
+========================================= */
+
+.nosotros{
+    text-align:center;
+    max-width:1000px;
+    margin:auto;
+}
+
+.nosotros p{
+    font-size:18px;
+    line-height:1.9;
+    color:#d9d9d9;
+}
+
+/* =========================================
+CONTACTO
+========================================= */
+
+.contacto{
+    text-align:center;
+}
+
+.contacto p{
+    margin:12px 0;
+    color:#d6d6d6;
+}
+
+.contacto a{
+    color:#d4af37;
+    text-decoration:none;
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+footer{
+    background:#050505;
+    padding:30px;
+    text-align:center;
+    color:#9f9f9f;
+    font-size:14px;
 }
 
 /* =========================================
@@ -285,25 +294,24 @@ RESPONSIVE
 
 @media(max-width:768px){
 
-    .hero{
-        background-size:contain;
-        padding:140px 20px 80px;
+    nav ul{
+        gap:18px;
+        flex-wrap:wrap;
     }
 
     .hero h1{
-        font-size:46px;
+        font-size:42px;
     }
 
     .hero p{
         font-size:17px;
     }
 
-    nav ul{
-        gap:18px;
-        flex-wrap:wrap;
-    }
-
     .titulo-seccion{
         font-size:38px;
+    }
+
+    .producto-card img{
+        height:220px;
     }
 }
