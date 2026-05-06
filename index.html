@@ -4,206 +4,251 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mármol Haus | Diseño en piedra y ónix</title>
+<title>Mármol Haus | Diseño en piedra y ónix premium</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:#111;
-    color:white;
+font-family:'Poppins',sans-serif;
+background:#0f0f0f;
+color:white;
+overflow-x:hidden;
 }
+
+/* NAVBAR */
 
 header{
-    width:100%;
-    background:#000;
-    padding:20px 40px;
-    position:fixed;
-    top:0;
-    z-index:1000;
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(10px);
+padding:18px 8%;
+display:flex;
+justify-content:center;
+gap:40px;
 }
 
-nav{
-    display:flex;
-    justify-content:center;
-    gap:40px;
+header a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-    transition:0.3s;
+header a:hover{
+color:#d4af37;
 }
 
-nav a:hover{
-    color:#d4af37;
-}
-
-/* PORTADA */
+/* HERO */
 
 .hero{
-    position:relative;
-    width:100%;
-    height:100vh;
-    overflow:hidden;
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),
+url('imágenes/portada.jpg');
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
-.hero-img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.hero-contenido{
+animation:fadeUp 1.5s ease;
 }
 
-.overlay{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.45);
-    top:0;
-    left:0;
+.hero h1{
+font-size:5rem;
+font-family:'Playfair Display',serif;
+margin-bottom:20px;
+text-shadow:0 5px 25px rgba(0,0,0,.5);
 }
 
-.hero-content{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    text-align:center;
-    z-index:2;
-    width:90%;
-}
-
-.hero-content h1{
-    font-family:'Playfair Display',serif;
-    font-size:75px;
-    margin-bottom:20px;
-}
-
-.hero-content p{
-    font-size:22px;
-    margin-bottom:30px;
+.hero p{
+font-size:1.2rem;
+max-width:700px;
+margin:auto;
+line-height:1.7;
+margin-bottom:35px;
 }
 
 .boton{
-    display:inline-block;
-    background:#d4af37;
-    color:black;
-    padding:15px 35px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:0.3s;
+display:inline-block;
+padding:14px 35px;
+background:#d4af37;
+color:black;
+font-weight:600;
+text-decoration:none;
+border-radius:8px;
+transition:.3s;
 }
 
 .boton:hover{
-    background:white;
+transform:translateY(-4px);
+background:#f3cd54;
+box-shadow:0 10px 25px rgba(212,175,55,.4);
 }
 
 /* SECCIONES */
 
 section{
-    padding:100px 8%;
+padding:110px 8%;
 }
 
-.titulo{
-    text-align:center;
-    font-size:55px;
-    margin-bottom:60px;
-    font-family:'Playfair Display',serif;
+.titulo-seccion{
+font-size:3rem;
+font-family:'Playfair Display',serif;
+margin-bottom:60px;
+text-align:center;
+color:#f5f5f5;
 }
 
-.productos{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:40px;
+/* GRID */
+
+.grid-productos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
 }
+
+/* TARJETAS */
 
 .producto{
-    background:#1b1b1b;
-    border-radius:18px;
-    overflow:hidden;
-    transition:0.3s;
+background:#171717;
+border-radius:22px;
+overflow:hidden;
+transition:.5s;
+border:1px solid rgba(255,255,255,.06);
+position:relative;
 }
 
 .producto:hover{
-    transform:translateY(-8px);
+transform:translateY(-10px);
+box-shadow:0 20px 50px rgba(0,0,0,.45);
 }
 
 .producto img{
-    width:100%;
-    height:320px;
-    object-fit:cover;
+width:100%;
+height:280px;
+object-fit:cover;
+transition:.6s;
+}
+
+.producto:hover img{
+transform:scale(1.05);
 }
 
 .producto-contenido{
-    padding:25px;
+padding:28px;
 }
 
-.producto-contenido h3{
-    font-size:28px;
-    margin-bottom:15px;
-    font-family:'Playfair Display',serif;
+.producto h3{
+font-size:1.5rem;
+margin-bottom:15px;
+font-family:'Playfair Display',serif;
 }
 
-.producto-contenido p{
-    line-height:1.7;
-    margin-bottom:18px;
-    color:#d6d6d6;
+.producto p{
+color:#d0d0d0;
+line-height:1.7;
+margin-bottom:15px;
+font-size:.95rem;
 }
 
 .codigo{
-    color:#d4af37;
-    font-weight:bold;
-    margin-bottom:20px;
+color:#d4af37;
+font-weight:600;
+margin-bottom:25px;
+}
+
+/* SOBRE NOSOTROS */
+
+.sobre{
+background:#141414;
+text-align:center;
+}
+
+.sobre p{
+max-width:900px;
+margin:auto;
+line-height:2;
+font-size:1.1rem;
+color:#d0d0d0;
 }
 
 /* CONTACTO */
 
 .contacto{
-    text-align:center;
-    background:#0d0d0d;
+text-align:center;
+background:#101010;
 }
 
 .contacto h2{
-    margin-bottom:25px;
-    font-size:50px;
+margin-bottom:25px;
 }
 
 .contacto p{
-    margin-bottom:15px;
-    font-size:20px;
+margin-bottom:15px;
+color:#d0d0d0;
 }
 
+/* FOOTER */
+
 footer{
-    text-align:center;
-    padding:30px;
-    background:black;
-    color:#888;
+padding:35px;
+text-align:center;
+background:black;
+color:#777;
+font-size:.9rem;
+}
+
+/* ANIMACIONES */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
 }
 
 /* RESPONSIVE */
 
 @media(max-width:768px){
 
-.hero-content h1{
-    font-size:50px;
+.hero h1{
+font-size:3rem;
 }
 
-.hero-content p{
-    font-size:18px;
+.hero p{
+font-size:1rem;
 }
 
-.titulo{
-    font-size:40px;
+header{
+gap:20px;
+font-size:.9rem;
 }
 
 }
@@ -214,74 +259,85 @@ footer{
 <body>
 
 <header>
-
-<nav>
-<a href="#">Inicio</a>
-<a href="#catalogo">Catálogo</a>
+<a href="#inicio">Inicio</a>
+<a href="#nosotros">Quiénes somos</a>
+<a href="#mesas">Mesas</a>
+<a href="#lavabos">Lavabos</a>
+<a href="#relojes">Relojes</a>
+<a href="#cuadros">Cuadros</a>
 <a href="#contacto">Contacto</a>
-</nav>
-
 </header>
 
-<!-- PORTADA -->
+<!-- HERO -->
 
-<section class="hero">
+<section class="hero" id="inicio">
 
-<div class="overlay"></div>
-
-<img src="imágenes/portada.jpg" class="hero-img" alt="Mármol Haus">
-
-<div class="hero-content">
+<div class="hero-contenido">
 
 <h1>Mármol Haus</h1>
 
 <p>
-Elegancia en mármol y ónix para espacios exclusivos.
-Diseño artesanal premium.
+Elegancia en piedra natural y ónix premium.
+Diseños artesanales exclusivos para espacios sofisticados.
 </p>
 
-<a href="#catalogo" class="boton">
+<a href="#mesas" class="boton">
 Ver catálogo
 </a>
 
 </div>
+</section>
+
+<!-- NOSOTROS -->
+
+<section class="sobre" id="nosotros">
+
+<h2 class="titulo-seccion">
+Quiénes somos
+</h2>
+
+<p>
+Creamos piezas exclusivas en mármol y ónix natural,
+fusionando diseño artesanal, iluminación y acabados premium
+para transformar espacios en experiencias visuales sofisticadas.
+</p>
 
 </section>
 
-<!-- CATÁLOGO -->
+<!-- MESAS -->
 
-<section id="catalogo">
+<section id="mesas">
 
-<h2 class="titulo">Catálogo Premium</h2>
+<h2 class="titulo-seccion">
+Mesas
+</h2>
 
-<div class="productos">
-
-<!-- PRODUCTO 1 -->
+<div class="grid-productos">
 
 <div class="producto">
 
-<img src="imágenes/MES-001.jpg" alt="Mesa ónix">
+<img src="imágenes/MES-001.jpg" alt="Mesa ónix iluminada">
 
 <div class="producto-contenido">
 
 <h3>Mesa ónix iluminada</h3>
 
 <p>
-Mesa artesanal en ónix natural traslúcido con iluminación integrada y acabado premium.
+Mesa artesanal en ónix traslúcido con iluminación integrada
+y diseño contemporáneo de alto impacto visual.
 </p>
 
 <div class="codigo">
 Código: MES-001
 </div>
 
-<a class="boton" href="https://wa.me/522291401824?text=Quiero%20cotizar%20MES-001">
+<a class="boton"
+href="https://wa.me/522291401824?text=Quiero%20cotizar%20MES-001">
 Cotizar
 </a>
 
 </div>
 </div>
-
-<!-- PRODUCTO 2 -->
 
 <div class="producto">
 
@@ -292,189 +348,230 @@ Cotizar
 <h3>Mesa comedor ónix</h3>
 
 <p>
-Cubierta amplia con diseño elegante y base sólida iluminada para interiores sofisticados.
+Cubierta premium en ónix natural con acabado pulido
+y estructura sólida elegante para interiores sofisticados.
 </p>
 
 <div class="codigo">
 Código: MES-002
 </div>
 
-<a class="boton" href="https://wa.me/522291401824?text=Quiero%20cotizar%20MES-002">
+<a class="boton"
+href="https://wa.me/522291401824?text=Quiero%20cotizar%20MES-002">
 Cotizar
 </a>
 
 </div>
 </div>
 
-<!-- PRODUCTO 3 -->
+</div>
+</section>
+
+<!-- LAVABOS -->
+
+<section id="lavabos">
+
+<h2 class="titulo-seccion">
+Lavabos
+</h2>
+
+<div class="grid-productos">
 
 <div class="producto">
 
-<img src="imágenes/LAV-001.jpg" alt="Lavabo mármol">
+<img src="imágenes/LAV-001.jpg">
 
 <div class="producto-contenido">
 
-<h3>Lavabo mármol premium</h3>
+<h3>Lavabo ónix elegante</h3>
 
 <p>
-Lavabo artesanal con acabado pulido y diseño minimalista de lujo.
+Diseño minimalista elaborado en ónix natural
+con vetas únicas y acabado brillante.
 </p>
 
 <div class="codigo">
 Código: LAV-001
 </div>
 
-<a class="boton" href="https://wa.me/522291401824?text=Quiero%20cotizar%20LAV-001">
+<a class="boton"
+href="https://wa.me/522291401824?text=Quiero%20cotizar%20LAV-001">
 Cotizar
 </a>
 
 </div>
 </div>
 
-<!-- PRODUCTO 4 -->
-
 <div class="producto">
 
-<img src="imágenes/LAV-002.jpg" alt="Lavabo ónix">
+<img src="imágenes/LAV-002.jpg">
 
 <div class="producto-contenido">
 
-<h3>Lavabo ónix moderno</h3>
+<h3>Lavabo moderno</h3>
 
 <p>
-Diseño contemporáneo fabricado en ónix natural con acabado brillante.
+Acabado contemporáneo con estructura resistente
+ideal para baños premium y espacios exclusivos.
 </p>
 
 <div class="codigo">
 Código: LAV-002
 </div>
 
-<a class="boton" href="https://wa.me/522291401824?text=Quiero%20cotizar%20LAV-002">
+<a class="boton"
+href="https://wa.me/522291401824?text=Quiero%20cotizar%20LAV-002">
 Cotizar
 </a>
 
 </div>
 </div>
 
-<!-- PRODUCTO 5 -->
-
 <div class="producto">
 
-<img src="imágenes/LAV-003.jpg" alt="Lavabo negro">
+<img src="imágenes/LAV-003.jpg">
 
 <div class="producto-contenido">
 
-<h3>Lavabo mármol negro</h3>
+<h3>Lavabo ónix natural</h3>
 
 <p>
-Pieza elegante para interiores modernos con líneas limpias y acabado premium.
+Pieza artesanal en ónix translúcido
+con líneas limpias y estética moderna.
 </p>
 
 <div class="codigo">
 Código: LAV-003
 </div>
 
-<a class="boton" href="https://wa.me/522291401824?text=Quiero%20cotizar%20LAV-003">
+<a class="boton"
+href="https://wa.me/522291401824?text=Quiero%20cotizar%20LAV-003">
 Cotizar
 </a>
 
 </div>
 </div>
 
-<!-- PRODUCTO 6 -->
-
 <div class="producto">
 
-<img src="imágenes/LAV-004.jpg" alt="Lavabo beige">
+<img src="imágenes/LAV-004.jpg">
 
 <div class="producto-contenido">
 
-<h3>Lavabo ónix beige</h3>
+<h3>Lavabo lujo premium</h3>
 
 <p>
-Diseño cálido y sofisticado ideal para baños premium y residenciales.
+Diseño exclusivo con textura natural
+y presencia sofisticada para interiores elegantes.
 </p>
 
 <div class="codigo">
 Código: LAV-004
 </div>
 
-<a class="boton" href="https://wa.me/522291401824?text=Quiero%20cotizar%20LAV-004">
+<a class="boton"
+href="https://wa.me/522291401824?text=Quiero%20cotizar%20LAV-004">
 Cotizar
 </a>
 
 </div>
 </div>
 
-<!-- PRODUCTO 7 -->
+</div>
+</section>
+
+<!-- RELOJES -->
+
+<section id="relojes">
+
+<h2 class="titulo-seccion">
+Relojes
+</h2>
+
+<div class="grid-productos">
 
 <div class="producto">
 
-<img src="imágenes/REL-001.jpg" alt="Reloj mármol">
+<img src="imágenes/REL-001.jpg">
 
 <div class="producto-contenido">
 
-<h3>Reloj decorativo</h3>
+<h3>Reloj decorativo ónix</h3>
 
 <p>
-Reloj artesanal en piedra natural con diseño decorativo moderno.
+Reloj artesanal elaborado en piedra natural
+con diseño moderno y presencia elegante.
 </p>
 
 <div class="codigo">
 Código: REL-001
 </div>
 
-<a class="boton" href="https://wa.me/522291401824?text=Quiero%20cotizar%20REL-001">
+<a class="boton"
+href="https://wa.me/522291401824?text=Quiero%20cotizar%20REL-001">
 Cotizar
 </a>
 
 </div>
 </div>
 
-<!-- PRODUCTO 8 -->
-
 <div class="producto">
 
-<img src="imágenes/REL-002.jpg" alt="Reloj ónix">
+<img src="imágenes/REL-002.jpg">
 
 <div class="producto-contenido">
 
-<h3>Reloj ónix premium</h3>
+<h3>Reloj premium diseño</h3>
 
 <p>
-Pieza decorativa exclusiva con acabado pulido y presencia elegante.
+Pieza decorativa exclusiva con acabados finos
+y contraste sofisticado en piedra natural.
 </p>
 
 <div class="codigo">
 Código: REL-002
 </div>
 
-<a class="boton" href="https://wa.me/522291401824?text=Quiero%20cotizar%20REL-002">
+<a class="boton"
+href="https://wa.me/522291401824?text=Quiero%20cotizar%20REL-002">
 Cotizar
 </a>
 
 </div>
 </div>
 
-<!-- PRODUCTO 9 -->
+</div>
+</section>
+
+<!-- CUADROS -->
+
+<section id="cuadros">
+
+<h2 class="titulo-seccion">
+Cuadros decorativos
+</h2>
+
+<div class="grid-productos">
 
 <div class="producto">
 
-<img src="imágenes/CUA-001.jpg" alt="Cuadro decorativo">
+<img src="imágenes/CUA-001.jpg">
 
 <div class="producto-contenido">
 
-<h3>Cuadro decorativo ónix</h3>
+<h3>Cuadro ónix decorativo</h3>
 
 <p>
-Arte decorativo elaborado en ónix y mármol natural con iluminación integrada.
+Composición artesanal iluminada
+con detalles artísticos y piedra natural premium.
 </p>
 
 <div class="codigo">
 Código: CUA-001
 </div>
 
-<a class="boton" href="https://wa.me/522291401824?text=Quiero%20cotizar%20CUA-001">
+<a class="boton"
+href="https://wa.me/522291401824?text=Quiero%20cotizar%20CUA-001">
 Cotizar
 </a>
 
@@ -482,29 +579,33 @@ Cotizar
 </div>
 
 </div>
-
 </section>
 
 <!-- CONTACTO -->
 
 <section class="contacto" id="contacto">
 
-<h2>Contacto</h2>
+<h2 class="titulo-seccion">
+Contacto
+</h2>
 
-<p>WhatsApp: +52 229 140 1824</p>
+<p>
+WhatsApp: +52 229 140 1824
+</p>
 
-<p>Diseños exclusivos en mármol y ónix</p>
+<p>
+Diseños exclusivos en mármol y ónix natural.
+</p>
 
-<a class="boton" href="https://wa.me/522291401824">
-Enviar mensaje
+<a class="boton"
+href="https://wa.me/522291401824">
+Contactar ahora
 </a>
 
 </section>
 
 <footer>
-
-© 2026 Mármol Haus — Diseño en piedra premium
-
+© 2026 Mármol Haus | Diseño premium en piedra natural
 </footer>
 
 </body>
