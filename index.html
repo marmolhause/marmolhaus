@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,80 +29,89 @@ overflow-x:hidden;
 header{
 position:fixed;
 top:0;
+left:0;
 width:100%;
-padding:20px 8%;
+z-index:999;
+background:rgba(0,0,0,.88);
+backdrop-filter:blur(10px);
+padding:18px 8%;
+}
+
+nav{
 display:flex;
 justify-content:center;
 gap:40px;
-background:rgba(0,0,0,.70);
-backdrop-filter:blur(10px);
-z-index:1000;
+flex-wrap:wrap;
 }
 
-header a{
+nav a{
 color:white;
 text-decoration:none;
+font-size:15px;
 font-weight:500;
 transition:.3s;
 }
 
-header a:hover{
-color:#d4af37;
+nav a:hover{
+color:#e7c86e;
 }
 
 /* HERO */
 
 .hero{
 height:100vh;
-
-background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.70)),
-url('img/portada.jpg');
-
+background-image:url('./img/portada.jpg');
 background-size:cover;
 background-position:center;
+background-repeat:no-repeat;
+
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
+
 padding:20px;
+position:relative;
 }
 
-.hero-contenido{
-animation:fadeUp 1.5s ease;
+.hero-content{
+background:rgba(0,0,0,.20);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(3px);
+
+animation:fadeUp 1.2s ease;
 }
 
 .hero h1{
-font-size:5rem;
 font-family:'Playfair Display',serif;
-margin-bottom:20px;
-text-shadow:0 5px 25px rgba(0,0,0,.5);
+font-size:78px;
+margin-bottom:15px;
+text-shadow:0 4px 20px rgba(0,0,0,.5);
 }
 
 .hero p{
 max-width:700px;
 margin:auto;
-font-size:1.15rem;
-line-height:1.8;
-margin-bottom:35px;
-color:#e0e0e0;
+font-size:20px;
+line-height:1.7;
+margin-bottom:30px;
 }
 
-.boton{
+.btn{
 display:inline-block;
-padding:14px 34px;
-background:#d4af37;
-color:black;
-font-weight:600;
-border-radius:10px;
+padding:14px 32px;
+background:#e7c86e;
+color:#111;
 text-decoration:none;
-transition:.35s;
+border-radius:12px;
+font-weight:600;
+transition:.3s;
 }
 
-.boton:hover{
-transform:translateY(-5px);
-background:#f0cb56;
-box-shadow:0 12px 25px rgba(212,175,55,.35);
+.btn:hover{
+transform:translateY(-3px);
+background:#f3d983;
 }
 
 /* SECCIONES */
@@ -112,121 +120,123 @@ section{
 padding:110px 8%;
 }
 
-.titulo-seccion{
+.titulo{
 text-align:center;
-font-size:3rem;
+font-size:58px;
 font-family:'Playfair Display',serif;
-margin-bottom:60px;
+margin-bottom:70px;
 }
 
-/* SOBRE NOSOTROS */
+/* GRID */
 
-.sobre{
-background:#141414;
-text-align:center;
-}
-
-.sobre p{
-max-width:900px;
-margin:auto;
-line-height:2;
-font-size:1.05rem;
-color:#d0d0d0;
-}
-
-/* GRID PRODUCTOS */
-
-.grid-productos{
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:35px;
 }
 
-/* PRODUCTOS */
+/* TARJETAS */
 
 .producto{
-background:#171717;
-border-radius:22px;
+background:#141414;
+border-radius:20px;
 overflow:hidden;
-transition:.5s;
+transition:.4s;
 border:1px solid rgba(255,255,255,.06);
+box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 
 .producto:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 50px rgba(0,0,0,.45);
+transform:translateY(-8px);
+box-shadow:0 20px 45px rgba(0,0,0,.55);
 }
+
+/* IMÁGENES CORREGIDAS */
 
 .producto img{
 width:100%;
-height:280px;
-object-fit:cover;
-transition:.6s;
+height:auto;
+display:block;
+border-radius:14px;
+transition:transform .35s ease;
 }
 
 .producto:hover img{
-transform:scale(1.05);
+transform:scale(1.02);
 }
 
-.producto-contenido{
-padding:28px;
+/* CONTENIDO */
+
+.info{
+padding:24px;
 }
 
-.producto h3{
-font-size:1.5rem;
+.info h3{
+font-size:30px;
 margin-bottom:15px;
 font-family:'Playfair Display',serif;
 }
 
-.producto p{
-color:#d0d0d0;
-line-height:1.7;
-margin-bottom:15px;
-font-size:.95rem;
+.info p{
+font-size:15px;
+line-height:1.8;
+color:#d2d2d2;
+margin-bottom:18px;
 }
 
 .codigo{
-color:#d4af37;
+color:#e7c86e;
 font-weight:600;
-margin-bottom:25px;
+margin-bottom:20px;
+display:block;
+}
+
+/* QUIENES SOMOS */
+
+.nosotros{
+text-align:center;
+max-width:1000px;
+margin:auto;
+}
+
+.nosotros p{
+font-size:18px;
+line-height:2;
+color:#d7d7d7;
 }
 
 /* CONTACTO */
 
 .contacto{
 text-align:center;
-background:#101010;
 }
 
 .contacto p{
-margin-bottom:15px;
-color:#d0d0d0;
+margin:12px 0;
+font-size:18px;
 }
 
 /* FOOTER */
 
 footer{
-background:black;
-padding:35px;
+padding:30px;
 text-align:center;
-color:#777;
-font-size:.9rem;
+background:#080808;
+color:#888;
+font-size:14px;
 }
 
 /* ANIMACIONES */
 
 @keyframes fadeUp{
-
 from{
 opacity:0;
 transform:translateY(40px);
 }
-
 to{
 opacity:1;
 transform:translateY(0);
 }
-
 }
 
 /* RESPONSIVE */
@@ -234,16 +244,19 @@ transform:translateY(0);
 @media(max-width:768px){
 
 .hero h1{
-font-size:3rem;
+font-size:52px;
 }
 
 .hero p{
-font-size:1rem;
+font-size:16px;
 }
 
-header{
-gap:20px;
-font-size:.9rem;
+.titulo{
+font-size:42px;
+}
+
+nav{
+gap:18px;
 }
 
 }
@@ -253,10 +266,8 @@ font-size:.9rem;
 
 <body>
 
-<!-- NAVBAR -->
-
 <header>
-
+<nav>
 <a href="#inicio">Inicio</a>
 <a href="#nosotros">Quiénes somos</a>
 <a href="#mesas">Mesas</a>
@@ -264,14 +275,14 @@ font-size:.9rem;
 <a href="#relojes">Relojes</a>
 <a href="#cuadros">Cuadros</a>
 <a href="#contacto">Contacto</a>
-
+</nav>
 </header>
 
 <!-- HERO -->
 
 <section class="hero" id="inicio">
 
-<div class="hero-contenido">
+<div class="hero-content">
 
 <h1>Mármol Haus</h1>
 
@@ -280,9 +291,7 @@ Elegancia en piedra natural y ónix premium.
 Diseños artesanales exclusivos para espacios sofisticados.
 </p>
 
-<a href="#mesas" class="boton">
-Ver catálogo
-</a>
+<a href="#mesas" class="btn">Ver catálogo</a>
 
 </div>
 
@@ -290,17 +299,21 @@ Ver catálogo
 
 <!-- NOSOTROS -->
 
-<section class="sobre" id="nosotros">
+<section id="nosotros">
 
-<h2 class="titulo-seccion">
-Quiénes somos
-</h2>
+<h2 class="titulo">Quiénes somos</h2>
+
+<div class="nosotros">
 
 <p>
-Creamos piezas exclusivas en mármol y ónix natural,
-fusionando diseño artesanal, iluminación y acabados premium
-para transformar espacios en experiencias visuales sofisticadas.
+En Mármol Haus creamos piezas exclusivas en mármol y ónix natural,
+fusionando diseño artesanal, elegancia y acabados premium para transformar
+espacios en experiencias visuales únicas.
+Cada pieza es trabajada cuidadosamente para ofrecer calidad,
+durabilidad y un diseño que trasciende.
 </p>
+
+</div>
 
 </section>
 
@@ -308,58 +321,46 @@ para transformar espacios en experiencias visuales sofisticadas.
 
 <section id="mesas">
 
-<h2 class="titulo-seccion">
-Mesas
-</h2>
+<h2 class="titulo">Mesas</h2>
 
-<div class="grid-productos">
+<div class="grid">
 
 <div class="producto">
 
-<img src="img/MES-001.jpg" alt="Mesa ónix iluminada">
+<img src="./img/MES-001.jpg" alt="Mesa ónix iluminada">
 
-<div class="producto-contenido">
+<div class="info">
 
 <h3>Mesa ónix iluminada</h3>
 
 <p>
-Mesa artesanal en ónix traslúcido con iluminación integrada
-y diseño contemporáneo de alto impacto visual.
+Mesa artesanal en ónix traslúcido con iluminación integrada y diseño contemporáneo
+de alto impacto visual.
 </p>
 
-<div class="codigo">
-Código: MES-001
-</div>
+<span class="codigo">Código: MES-001</span>
 
-<a class="boton"
-href="https://wa.me/522291401824?text=Quiero%20cotizar%20MES-001">
-Cotizar
-</a>
+<a href="#contacto" class="btn">Cotizar</a>
 
 </div>
 </div>
 
 <div class="producto">
 
-<img src="img/MES-002.jpg" alt="Mesa comedor ónix">
+<img src="./img/MES-002.jpg" alt="Mesa comedor ónix">
 
-<div class="producto-contenido">
+<div class="info">
 
 <h3>Mesa comedor ónix</h3>
 
 <p>
-Cubierta premium en ónix natural con acabado pulido
-y estructura sólida elegante para interiores sofisticados.
+Cubierta premium en ónix natural con acabado pulido y estructura sólida elegante
+para interiores sofisticados.
 </p>
 
-<div class="codigo">
-Código: MES-002
-</div>
+<span class="codigo">Código: MES-002</span>
 
-<a class="boton"
-href="https://wa.me/522291401824?text=Quiero%20cotizar%20MES-002">
-Cotizar
-</a>
+<a href="#contacto" class="btn">Cotizar</a>
 
 </div>
 </div>
@@ -372,108 +373,82 @@ Cotizar
 
 <section id="lavabos">
 
-<h2 class="titulo-seccion">
-Lavabos
-</h2>
+<h2 class="titulo">Lavabos</h2>
 
-<div class="grid-productos">
+<div class="grid">
 
 <div class="producto">
 
-<img src="img/LAV-001.jpg">
+<img src="./img/LAV-001.jpg" alt="Lavabo mármol">
 
-<div class="producto-contenido">
+<div class="info">
 
-<h3>Lavabo ónix elegante</h3>
+<h3>Lavabo artesanal</h3>
 
 <p>
-Diseño minimalista elaborado en ónix natural
-con vetas únicas y acabado brillante.
+Lavabo de mármol natural tallado artesanalmente con acabados elegantes y diseño exclusivo.
 </p>
 
-<div class="codigo">
-Código: LAV-001
-</div>
+<span class="codigo">Código: LAV-001</span>
 
-<a class="boton"
-href="https://wa.me/522291401824?text=Quiero%20cotizar%20LAV-001">
-Cotizar
-</a>
+<a href="#contacto" class="btn">Cotizar</a>
 
 </div>
 </div>
 
 <div class="producto">
 
-<img src="img/LAV-002.jpg">
+<img src="./img/LAV-002.jpg" alt="Lavabo ónix">
 
-<div class="producto-contenido">
+<div class="info">
+
+<h3>Lavabo ónix premium</h3>
+
+<p>
+Diseño moderno en ónix traslúcido ideal para baños sofisticados y contemporáneos.
+</p>
+
+<span class="codigo">Código: LAV-002</span>
+
+<a href="#contacto" class="btn">Cotizar</a>
+
+</div>
+</div>
+
+<div class="producto">
+
+<img src="./img/LAV-003.jpg" alt="Lavabo lujo">
+
+<div class="info">
+
+<h3>Lavabo rectangular</h3>
+
+<p>
+Pieza premium elaborada en piedra natural con estética elegante y acabados pulidos.
+</p>
+
+<span class="codigo">Código: LAV-003</span>
+
+<a href="#contacto" class="btn">Cotizar</a>
+
+</div>
+</div>
+
+<div class="producto">
+
+<img src="./img/LAV-004.jpg" alt="Lavabo moderno">
+
+<div class="info">
 
 <h3>Lavabo moderno</h3>
 
 <p>
-Acabado contemporáneo con estructura resistente
-ideal para baños premium y espacios exclusivos.
+Diseño minimalista en mármol y ónix natural ideal para interiores de lujo.
 </p>
 
-<div class="codigo">
-Código: LAV-002
-</div>
+<span class="codigo">Código: LAV-004</span>
 
-<a class="boton"
-href="https://wa.me/522291401824?text=Quiero%20cotizar%20LAV-002">
-Cotizar
-</a>
-
-</div>
-</div>
-
-<div class="producto">
-
-<img src="img/LAV-003.jpg">
-
-<div class="producto-contenido">
-
-<h3>Lavabo ónix natural</h3>
-
-<p>
-Pieza artesanal en ónix translúcido
-con líneas limpias y estética moderna.
-</p>
-
-<div class="codigo">
-Código: LAV-003
-</div>
-
-<a class="boton"
-href="https://wa.me/522291401824?text=Quiero%20cotizar%20LAV-003">
-Cotizar
-</a>
-
-</div>
-</div>
-
-<div class="producto">
-
-<img src="img/LAV-004.jpg">
-
-<div class="producto-contenido">
-
-<h3>Lavabo lujo premium</h3>
-
-<p>
-Diseño exclusivo con textura natural
-y presencia sofisticada para interiores elegantes.
-</p>
-
-<div class="codigo">
-Código: LAV-004
-</div>
-
-<a class="boton"
-href="https://wa.me/522291401824?text=Quiero%20cotizar%20LAV-004">
-Cotizar
-</a>
+<a href="#contacto" class="btn">Cotizar</a>
 
 </div>
 </div>
@@ -486,58 +461,44 @@ Cotizar
 
 <section id="relojes">
 
-<h2 class="titulo-seccion">
-Relojes
-</h2>
+<h2 class="titulo">Relojes</h2>
 
-<div class="grid-productos">
+<div class="grid">
 
 <div class="producto">
 
-<img src="img/REL-001.jpg">
+<img src="./img/REL-001.jpg" alt="Reloj artesanal">
 
-<div class="producto-contenido">
+<div class="info">
 
-<h3>Reloj decorativo ónix</h3>
+<h3>Reloj decorativo</h3>
 
 <p>
-Reloj artesanal elaborado en piedra natural
-con diseño moderno y presencia elegante.
+Reloj artesanal elaborado en mármol natural con diseño elegante y detalles únicos.
 </p>
 
-<div class="codigo">
-Código: REL-001
-</div>
+<span class="codigo">Código: REL-001</span>
 
-<a class="boton"
-href="https://wa.me/522291401824?text=Quiero%20cotizar%20REL-001">
-Cotizar
-</a>
+<a href="#contacto" class="btn">Cotizar</a>
 
 </div>
 </div>
 
 <div class="producto">
 
-<img src="img/REL-002.jpg">
+<img src="./img/REL-002.jpg" alt="Reloj ónix">
 
-<div class="producto-contenido">
+<div class="info">
 
-<h3>Reloj premium diseño</h3>
+<h3>Reloj premium</h3>
 
 <p>
-Pieza decorativa exclusiva con acabados finos
-y contraste sofisticado en piedra natural.
+Diseño exclusivo ideal para decoración sofisticada y espacios contemporáneos.
 </p>
 
-<div class="codigo">
-Código: REL-002
-</div>
+<span class="codigo">Código: REL-002</span>
 
-<a class="boton"
-href="https://wa.me/522291401824?text=Quiero%20cotizar%20REL-002">
-Cotizar
-</a>
+<a href="#contacto" class="btn">Cotizar</a>
 
 </div>
 </div>
@@ -550,33 +511,25 @@ Cotizar
 
 <section id="cuadros">
 
-<h2 class="titulo-seccion">
-Cuadros decorativos
-</h2>
+<h2 class="titulo">Cuadros</h2>
 
-<div class="grid-productos">
+<div class="grid">
 
 <div class="producto">
 
-<img src="img/CUA-001.jpg">
+<img src="./img/CUA-001.jpg" alt="Cuadro artesanal">
 
-<div class="producto-contenido">
+<div class="info">
 
-<h3>Cuadro ónix decorativo</h3>
+<h3>Cuadro decorativo</h3>
 
 <p>
-Composición artesanal iluminada
-con detalles artísticos y piedra natural premium.
+Cuadro artesanal iluminado elaborado con piedra natural y detalles decorativos únicos.
 </p>
 
-<div class="codigo">
-Código: CUA-001
-</div>
+<span class="codigo">Código: CUA-001</span>
 
-<a class="boton"
-href="https://wa.me/522291401824?text=Quiero%20cotizar%20CUA-001">
-Cotizar
-</a>
+<a href="#contacto" class="btn">Cotizar</a>
 
 </div>
 </div>
@@ -587,29 +540,22 @@ Cotizar
 
 <!-- CONTACTO -->
 
-<section class="contacto" id="contacto">
+<section id="contacto">
 
-<h2 class="titulo-seccion">
-Contacto
-</h2>
+<h2 class="titulo">Contacto</h2>
 
-<p>
-WhatsApp: +52 229 140 1824
-</p>
+<div class="contacto">
 
-<p>
-Diseños exclusivos en mármol y ónix natural.
-</p>
+<p>📍 Veracruz, México</p>
+<p>📞 WhatsApp disponible</p>
+<p>📧 marmolhaus@gmail.com</p>
 
-<a class="boton"
-href="https://wa.me/522291401824">
-Contactar ahora
-</a>
+</div>
 
 </section>
 
 <footer>
-© 2026 Mármol Haus | Diseño premium en piedra natural
+© 2026 Mármol Haus — Diseño en piedra natural y ónix premium
 </footer>
 
 </body>
